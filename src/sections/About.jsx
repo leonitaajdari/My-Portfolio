@@ -68,6 +68,12 @@ export default function About() {
                 <dd>{identity.age}</dd>
               </div>
             ) : null}
+            {identity.favoriteTool ? (
+              <div>
+                <dt>Favorite tool</dt>
+                <dd>{identity.favoriteTool}</dd>
+              </div>
+            ) : null}
           </dl>
         </div>
       </div>

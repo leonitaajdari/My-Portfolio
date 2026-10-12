@@ -23,4 +23,6 @@ export const identity = {
   role: "Applied Programming student",
   studyingIn: "Skopje, North Macedonia",
   age: 20,
+  // Shown as "Favorite tool" in the card, e.g. "VS Code" or "React". null hides it.
+  favoriteTool: null,
 };
