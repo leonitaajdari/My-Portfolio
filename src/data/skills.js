@@ -19,7 +19,11 @@ export const skillGroups = [
   {
     id: "programming",
     title: "Programming",
-    skills: [{ name: "C++", note: "Studied" }],
+    skills: [
+      { name: "JavaScript", note: "FitPlan" },
+      { name: "C++", note: "Studied" },
+      { name: "OCaml", note: null },
+    ],
   },
   {
     id: "tools",
