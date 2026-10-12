@@ -72,8 +72,10 @@ are hidden on the live site. While running `npm run dev`, each missing section s
 "Development placeholder" box so you can see what is still left to write.
 
 ### Hero images
-The hero corridor uses real captures of the featured sites in `public/images/stream/` (`stream-01.webp` to `stream-09.webp`).
-To change them, replace those files (portrait, about 480×667) or edit `src/data/heroImages.js`.
+The hero corridor uses nine developer-style stock photos (code on screens, a terminal, laptops) from
+[Unsplash](https://unsplash.com), used under the Unsplash License. They are not screenshots of your work.
+The files are `public/images/stream/stream-01.webp` to `stream-09.webp` (portrait, about 600×833).
+To change them, replace those files or edit `src/data/heroImages.js`.
 
 ### Other content
 | What | File |
