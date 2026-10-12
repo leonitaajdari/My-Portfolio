@@ -8,8 +8,8 @@
 // Keep in mind everything in public/ is visible to anyone on the internet.
 
 export const portrait = {
-  src: null,
-  alt: "Portrait of Leonita Ajdari",
+  src: "/images/leonita-portrait.webp",
+  alt: "Illustrated portrait of Leonita Ajdari",
   // Where the crop is centred. "50% 20%" keeps faces in frame; try "50% 50%" for centred shots.
-  position: "50% 20%",
+  position: "50% 25%",
 };

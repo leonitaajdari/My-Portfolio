@@ -30,8 +30,8 @@ export default function About() {
               <img
                 src={portrait.src}
                 alt={portrait.alt}
-                width="640"
-                height="800"
+                width="900"
+                height="900"
                 loading="lazy"
                 decoding="async"
                 style={{ objectPosition: portrait.position }}
