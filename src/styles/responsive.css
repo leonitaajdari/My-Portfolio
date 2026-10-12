@@ -1,0 +1,104 @@
+/* Mobile-first: these rules widen the layout as space allows. */
+
+@media (min-width: 640px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__scroll {
+    display: grid;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr auto auto;
+    align-items: start;
+  }
+}
+
+@media (min-width: 860px) {
+  /* Desktop navigation replaces the toggle menu. */
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__links {
+    position: static;
+    display: block;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+
+  .navbar__links ul {
+    display: flex;
+    gap: 0.15rem;
+  }
+
+  .navbar__links a {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .project {
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  .project__media {
+    aspect-ratio: auto;
+    min-height: 100%;
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .project:nth-child(even) {
+    grid-template-columns: 1fr 1.15fr;
+  }
+
+  .project:nth-child(even) .project__media {
+    order: 2;
+    border-right: 0;
+    border-left: 1px solid var(--border);
+  }
+
+  .project__body {
+    padding: 2rem;
+    justify-content: center;
+  }
+
+  .about {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about .section-heading {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1100px) {
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .certs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .btn {
+    width: 100%;
+  }
+
+  .hero__actions,
+  .contact__actions,
+  .project__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
