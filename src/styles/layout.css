@@ -117,33 +117,78 @@
 /* Hero */
 .hero {
   position: relative;
-  min-height: calc(100svh - var(--header-h));
-  display: flex;
-  align-items: center;
-  padding-block: 3rem 5rem;
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
+/* The corridor of project captures (see ImageStreamHero). */
+.ish {
+  position: relative;
+  overflow: hidden;
+}
+
+.ish__scene {
   position: absolute;
-  inset: -20% -10% auto auto;
-  width: min(60vw, 620px);
-  aspect-ratio: 1;
-  background: radial-gradient(
-    circle,
-    rgba(124, 107, 255, 0.28),
-    rgba(76, 195, 255, 0.08) 55%,
-    transparent 70%
-  );
-  filter: blur(10px);
+  inset: 0;
   pointer-events: none;
 }
 
-.hero__inner {
+.ish__plane {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.ish__card {
+  position: absolute;
+  left: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.ish__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  /* Dimmed so the headline stays readable over bright screenshots. */
+  filter: brightness(0.62) saturate(1.05);
+}
+
+.hero__stage {
+  min-height: max(36rem, calc(100svh - var(--header-h)));
+  display: flex;
+}
+
+/* Darkens the top and bottom, where the text sits, and fades the edges. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(15, 16, 21, 0.78) 24%, rgba(15, 16, 21, 0) 44%),
+    linear-gradient(0deg, var(--bg) 0%, rgba(15, 16, 21, 0.85) 26%, rgba(15, 16, 21, 0) 52%);
+}
+
+.hero__content {
   position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-block: clamp(2rem, 5vw, 3.5rem) clamp(4.5rem, 8vw, 6rem);
+  text-align: center;
+}
+
+.hero__top,
+.hero__bottom {
   display: grid;
-  gap: 1.5rem;
+  justify-items: center;
+  gap: 1.25rem;
 }
 
 .hero__title {
@@ -151,19 +196,22 @@
   line-height: 1.03;
   letter-spacing: -0.035em;
   max-width: 14ch;
+  text-wrap: balance;
 }
 
 .hero__lead {
   max-width: 36rem;
   font-size: var(--step-1);
-  color: var(--text-muted);
+  color: var(--text);
+  opacity: 0.85;
+  text-wrap: balance;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
-  margin-top: 0.75rem;
 }
 
 .hero__enter {
@@ -173,6 +221,7 @@
 
 .hero__scroll {
   position: absolute;
+  z-index: 3;
   bottom: 1.5rem;
   left: 50%;
   display: none;

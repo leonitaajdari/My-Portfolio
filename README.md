@@ -62,6 +62,10 @@ All content lives in `src/data/`, so components never need editing for routine u
 
 Use `null` for any URL that does not exist. A project with no `githubUrl` shows "Source not public".
 
+### Hero images
+The hero corridor uses real captures of the featured sites in `public/images/stream/` (`stream-01.webp` to `stream-09.webp`).
+To change them, replace those files (portrait, about 480×667) or edit `src/data/heroImages.js`.
+
 ### Other content
 | What | File |
 |---|---|
