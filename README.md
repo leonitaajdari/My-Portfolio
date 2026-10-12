@@ -108,11 +108,6 @@ Colors follow the site theme (`--accent`, `--accent-2`, `--bg`). The component i
 The site follows the visitor's system light/dark preference on the first visit and remembers their
 choice in `localStorage`. Colors are CSS variables in `src/styles/variables.css`.
 
-### GitHub activity
-The About section lists your most recently pushed public repositories from the public GitHub API
-(no key needed, cached for 10 minutes). It shows loading, empty and error states. Change the account
-in `githubUsername` in `socialLinks.js`.
-
 ### Contact form
 There is no form on purpose: a form needs a service to receive messages. The email button works
 everywhere. To add one later, Netlify Forms is the simplest option once the site is deployed.

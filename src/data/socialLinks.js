@@ -39,8 +39,6 @@ export const socialLinks = [
 // Use a version without date of birth, home address or phone number.
 export const cvUrl = null;
 
-export const githubUsername = "leonitaajdari";
-
 export const navLinks = [
   { id: "top", label: "Home" },
   { id: "projects", label: "Projects" },

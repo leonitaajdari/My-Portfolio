@@ -67,7 +67,7 @@
     grid-template-columns: 1.3fr 1fr;
     grid-template-areas:
       "intro portrait"
-      "facts activity";
+      "facts namecard";
     column-gap: 3rem;
     row-gap: 1.5rem;
   }
@@ -75,7 +75,7 @@
   .about--no-portrait {
     grid-template-areas:
       "intro facts"
-      "activity activity";
+      "namecard namecard";
   }
 
   .learn {

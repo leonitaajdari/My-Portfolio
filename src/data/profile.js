@@ -13,3 +13,12 @@ export const portrait = {
   // Where the crop is centred. "50% 20%" keeps faces in frame; try "50% 50%" for centred shots.
   position: "50% 25%",
 };
+
+// The name card in the About section.
+// Set age to a number (e.g. 21) to show it, or leave it null to keep it private.
+export const identity = {
+  fullName: "Leonita Ajdari",
+  role: "Applied Programming student",
+  studyingIn: "Skopje, North Macedonia",
+  age: null,
+};

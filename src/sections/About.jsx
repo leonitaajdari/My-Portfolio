@@ -1,7 +1,6 @@
-import GitHubActivity from "../components/GitHubActivity";
 import SectionHeading from "../components/SectionHeading";
 import { currentStudies, languages } from "../data/education";
-import { portrait } from "../data/profile";
+import { identity, portrait } from "../data/profile";
 
 export default function About() {
   return (
@@ -55,7 +54,22 @@ export default function About() {
           </div>
         </dl>
 
-        <GitHubActivity />
+        <div className="namecard reveal">
+          <p className="namecard__name">{identity.fullName}</p>
+          <p className="namecard__role">{identity.role}</p>
+          <dl className="namecard__meta">
+            <div>
+              <dt>Studying in</dt>
+              <dd>{identity.studyingIn}</dd>
+            </div>
+            {identity.age ? (
+              <div>
+                <dt>Age</dt>
+                <dd>{identity.age}</dd>
+              </div>
+            ) : null}
+          </dl>
+        </div>
       </div>
     </section>
   );
