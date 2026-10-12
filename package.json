@@ -2,6 +2,8 @@
   "name": "leonita-portfolio",
   "private": true,
   "version": "1.0.0",
+  "description": "Personal portfolio of Leonita Ajdari, an Applied Programming student and aspiring front-end developer.",
+  "author": "Leonita Ajdari",
   "type": "module",
   "scripts": {
     "dev": "vite",

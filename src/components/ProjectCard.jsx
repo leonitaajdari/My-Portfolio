@@ -67,12 +67,9 @@ export default function ProjectCard({ project }) {
         <GlassFolder
           label={shortTitle ?? title}
           meta={status === "in-progress" ? "In progress" : "Completed"}
-          tone="dark"
           image={image}
           files={files}
-          action="none"
           width={folderWidth}
-          labelPlacement="bottom-left"
         />
         {status === "in-progress" ? (
           <span className="project__badge">In progress</span>

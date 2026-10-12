@@ -25,15 +25,15 @@ Requires Node.js 20 or newer.
 
 ```
 src/
-├── components/   Reusable UI (Navbar, Button, ProjectCard, ...)
-├── sections/     Page sections (Hero, About, Skills, Projects, ...)
-├── data/         All site content: projects, skills, education, certifications, links
-├── hooks/        useActiveSection, useReveal
+├── components/   Reusable UI (Navbar, ProjectCard, GlassFolder, IntroOverlay, ...)
+├── sections/     Page sections (Hero, Projects, Skills, About, Education, Contact)
+├── data/         All content: projects, skills, education, courses, profile, links, intro
+├── hooks/        useActiveSection, useReveal, useTheme
 ├── utils/        externalLinks.js
 └── styles/       variables, global, layout, components, responsive
 public/
 ├── favicon.svg
-└── images/       Project screenshots (WebP)
+└── images/       Project screenshots, portrait and hero photos (WebP)
 ```
 
 ## Updating content
@@ -81,9 +81,15 @@ To change them, replace those files or edit `src/data/heroImages.js`.
 | What | File |
 |---|---|
 | Skill categories and the note under each skill | `src/data/skills.js` |
+| Name card (role, age, favorite tool) and portrait | `src/data/profile.js` |
 | Education and languages | `src/data/education.js` |
-| Courses and certificates | `src/data/certifications.js` |
+| Courses | `src/data/certifications.js` |
 | Email, social links, navigation | `src/data/socialLinks.js` |
+
+### Link preview image
+Social networks need an absolute image URL for link previews, so none is set yet. After deploying,
+add `<meta property="og:image" content="https://YOUR-SITE/images/your-image.webp" />` to `index.html`
+and change `twitter:card` to `summary_large_image`.
 
 ### Social links and CV
 In `src/data/socialLinks.js`, paste the exact profile URL for LinkedIn, Facebook and Instagram.

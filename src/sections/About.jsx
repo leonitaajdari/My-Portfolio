@@ -1,5 +1,5 @@
 import SectionHeading from "../components/SectionHeading";
-import { currentStudies, languages } from "../data/education";
+import { languages } from "../data/education";
 import { identity, portrait } from "../data/profile";
 
 export default function About() {
@@ -38,12 +38,6 @@ export default function About() {
         ) : null}
 
         <dl className="facts reveal">
-          <div>
-            <dt>Studying</dt>
-            <dd>
-              {currentStudies.degree}, {currentStudies.institution}
-            </dd>
-          </div>
           <div>
             <dt>Focus</dt>
             <dd>Front-end development with React and JavaScript</dd>

@@ -39,7 +39,7 @@ export const projects = [
     imageAlt: "Screenshot of the FitPlan landing page with a healthy meal photo and a call to action.",
     featured: true,
     status: "completed",
-    note: "Logged-in features use a separate API hosted on a free service, which may take a moment to wake up.",
+    note: "Account features connect to a separate API that can take a few seconds to start.",
   },
   {
     id: "kindling-coffee",
@@ -99,7 +99,7 @@ export const projects = [
     id: "manimagic",
     title: "ManiMagic",
     description:
-      "A one-page website for a nail studio concept with services, a price list, a photo gallery and client reviews. Still being refined: the booking flow and some links are not finished yet.",
+      "A one-page website for a nail studio concept with services, a price list, a photo gallery and client reviews.",
     problem: null,
     features: [],
     contributions: null,
