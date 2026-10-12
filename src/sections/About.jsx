@@ -6,8 +6,8 @@ import { portrait } from "../data/profile";
 export default function About() {
   return (
     <section className="section" id="about" aria-labelledby="about-title">
-      <div className="container about">
-        <div>
+      <div className={`container about${portrait.src ? "" : " about--no-portrait"}`}>
+        <div className="about__intro">
           <SectionHeading id="about-title" eyebrow="03 / About" title="A bit about me" />
           <div className="about__text reveal">
             <p>
@@ -24,40 +24,38 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about__aside">
-          {portrait.src ? (
-            <figure className="portrait reveal">
-              <img
-                src={portrait.src}
-                alt={portrait.alt}
-                width="900"
-                height="900"
-                loading="lazy"
-                decoding="async"
-                style={{ objectPosition: portrait.position }}
-              />
-            </figure>
-          ) : null}
+        {portrait.src ? (
+          <figure className="portrait reveal">
+            <img
+              src={portrait.src}
+              alt={portrait.alt}
+              width="900"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              style={{ objectPosition: portrait.position }}
+            />
+          </figure>
+        ) : null}
 
-          <dl className="facts reveal">
-            <div>
-              <dt>Studying</dt>
-              <dd>
-                {currentStudies.degree}, {currentStudies.institution}
-              </dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Front-end development with React and JavaScript</dd>
-            </div>
-            <div>
-              <dt>Languages</dt>
-              <dd>{languages.join(" · ")}</dd>
-            </div>
-          </dl>
+        <dl className="facts reveal">
+          <div>
+            <dt>Studying</dt>
+            <dd>
+              {currentStudies.degree}, {currentStudies.institution}
+            </dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Front-end development with React and JavaScript</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>{languages.join(" · ")}</dd>
+          </div>
+        </dl>
 
-          <GitHubActivity />
-        </div>
+        <GitHubActivity />
       </div>
     </section>
   );

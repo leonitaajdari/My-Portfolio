@@ -65,8 +65,17 @@
 
   .about {
     grid-template-columns: 1.3fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    grid-template-areas:
+      "intro portrait"
+      "facts activity";
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+  }
+
+  .about--no-portrait {
+    grid-template-areas:
+      "intro facts"
+      "activity activity";
   }
 
   .learn {
