@@ -1,6 +1,29 @@
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import Button from "./Button";
 import GitHubIcon from "./GitHubIcon";
+import GlassFolder from "./GlassFolder";
+
+const FOLDER_WIDTH = 340;
+const FOLDER_MIN_WIDTH = 220;
+
+// Keeps the folder inside its column on narrow screens.
+function useFolderWidth(ref) {
+  const [width, setWidth] = useState(FOLDER_WIDTH);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(([entry]) => {
+      const available = Math.floor(entry.contentRect.width);
+      setWidth(Math.max(FOLDER_MIN_WIDTH, Math.min(FOLDER_WIDTH, available)));
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
+
+  return width;
+}
 
 export default function ProjectCard({ project }) {
   const {
@@ -10,21 +33,43 @@ export default function ProjectCard({ project }) {
     liveUrl,
     githubUrl,
     image,
-    imageAlt,
     status,
     note,
   } = project;
 
+  const mediaRef = useRef(null);
+  const folderWidth = useFolderWidth(mediaRef);
+
+  // Only real links become files inside the folder.
+  const files = useMemo(() => {
+    const list = [];
+    if (liveUrl) {
+      list.push({
+        name: "Live demo",
+        meta: "Opens the site",
+        image,
+        href: liveUrl,
+        external: true,
+      });
+    }
+    if (githubUrl) {
+      list.push({ name: "GitHub source", meta: "Repository", href: githubUrl, external: true });
+    }
+    return list;
+  }, [liveUrl, githubUrl, image]);
+
   return (
     <article className="project reveal">
-      <div className="project__media">
-        <img
-          src={image}
-          alt={imageAlt}
-          width="1200"
-          height="750"
-          loading="lazy"
-          decoding="async"
+      <div className="project__media" ref={mediaRef}>
+        <GlassFolder
+          label={title}
+          meta={status === "in-progress" ? "In progress" : "Completed"}
+          tone="dark"
+          image={image}
+          files={files}
+          action="none"
+          width={folderWidth}
+          labelPlacement="bottom-left"
         />
         {status === "in-progress" ? (
           <span className="project__badge">In progress</span>
