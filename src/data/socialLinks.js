@@ -14,9 +14,24 @@ export const socialLinks = [
     url: "https://github.com/leonitaajdari",
     priority: "primary",
   },
-  { id: "linkedin", label: "LinkedIn", url: null, priority: "primary" },
-  { id: "facebook", label: "Facebook", url: null, priority: "secondary" },
-  { id: "instagram", label: "Instagram", url: null, priority: "secondary" },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/leonita-ajdari-743577345/",
+    priority: "primary",
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    url: "https://www.facebook.com/leonita.ajdari.2025",
+    priority: "secondary",
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    url: "https://www.instagram.com/leonitaajd/",
+    priority: "secondary",
+  },
 ];
 
 // A "Download CV" button appears only when this points to a real PDF,
