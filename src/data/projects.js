@@ -21,6 +21,20 @@ export const projects = [
     note: "Logged-in features use a separate API hosted on a free service, which may take a moment to wake up.",
   },
   {
+    id: "kindling-coffee",
+    title: "Kindling Coffee",
+    description:
+      "A single-page website for a small-batch coffee roastery and café, with a drinks menu, a bean shop section, visitor information and a contact form.",
+    technologies: ["React", "TanStack Router", "Tailwind CSS"],
+    liveUrl: "https://kindilingcaffeee.netlify.app/",
+    githubUrl: null,
+    image: "/images/kindling-coffee.webp",
+    imageAlt: "Screenshot of the Kindling Coffee website showing a barista pouring milk into a latte and the headline 'Coffee worth getting up for'.",
+    featured: true,
+    status: "completed",
+    note: null,
+  },
+  {
     id: "cinematic-art",
     title: "The Evolution of Cinematic Art",
     description:

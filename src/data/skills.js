@@ -7,10 +7,10 @@ export const skillGroups = [
     id: "frontend",
     title: "Front-End Technologies",
     skills: [
-      { name: "HTML", level: "used", note: "FitPlan, Cinematic Art, ManiMagic" },
-      { name: "CSS", level: "used", note: "FitPlan, Cinematic Art, ManiMagic" },
+      { name: "HTML", level: "used", note: "All featured projects" },
+      { name: "CSS", level: "used", note: "All featured projects" },
       { name: "JavaScript", level: "used", note: "FitPlan" },
-      { name: "React", level: "used", note: "FitPlan" },
+      { name: "React", level: "used", note: "FitPlan, Kindling Coffee" },
       { name: "Web Design", level: "used", note: "All featured projects" },
     ],
   },
