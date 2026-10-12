@@ -20,7 +20,7 @@
   --focus: #4cc3ff;
   --header-bg: rgba(15, 16, 21, 0.82);
   --overlay: rgba(6, 7, 10, 0.72);
-  --card-dim: brightness(0.62) saturate(1.05);
+  --card-dim: brightness(0.82) saturate(1.05);
 
   /* Type */
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;

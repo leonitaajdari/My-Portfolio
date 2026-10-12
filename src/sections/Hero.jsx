@@ -5,12 +5,15 @@ import SocialIcon from "../components/SocialIcon";
 import { heroImages } from "../data/heroImages";
 import { socialLinks } from "../data/socialLinks";
 
+// Photo cards: a softer corner radius than the component default.
+const CORRIDOR = { cardRadius: 1.1 };
+
 export default function Hero() {
   const github = socialLinks.find((link) => link.id === "github" && link.url);
 
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
-      <ImageStreamHero className="hero__stage" images={heroImages}>
+      <ImageStreamHero className="hero__stage" images={heroImages} path={CORRIDOR}>
         <div className="hero__scrim" aria-hidden="true" />
 
         <div className="container hero__content">
