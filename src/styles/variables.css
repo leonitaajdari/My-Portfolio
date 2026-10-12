@@ -1,4 +1,7 @@
+/* Dark is the default; the light palette is applied via [data-theme="light"]. */
 :root {
+  color-scheme: dark;
+
   /* Color */
   --bg: #0f1015;
   --bg-raised: #15171e;
@@ -14,6 +17,10 @@
   --success: #5ee0a0;
   --warning: #ffc861;
   --on-accent: #0f1015;
+  --focus: #4cc3ff;
+  --header-bg: rgba(15, 16, 21, 0.82);
+  --overlay: rgba(6, 7, 10, 0.72);
+  --card-dim: brightness(0.62) saturate(1.05);
 
   /* Type */
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -36,4 +43,28 @@
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow: 0 18px 50px -24px rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f7fa;
+  --bg-raised: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f0f0f6;
+  --border: #e1e2ec;
+  --border-strong: #c7c9d9;
+  --text: #15161c;
+  --text-muted: #565b70;
+  --accent: #6a56f2;
+  --accent-strong: #5a45e8;
+  --accent-2: #0a85c4;
+  --success: #12794f;
+  --warning: #8f5a00;
+  --on-accent: #ffffff;
+  --focus: #0b5fd6;
+  --header-bg: rgba(247, 247, 250, 0.94);
+  --overlay: rgba(20, 22, 34, 0.5);
+  --card-dim: none;
+  --shadow: 0 18px 50px -24px rgba(30, 32, 60, 0.28);
 }

@@ -34,7 +34,7 @@
   top: 0;
   z-index: 50;
   height: var(--header-h);
-  background: rgba(15, 16, 21, 0.82);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -68,7 +68,13 @@
   font-weight: 700;
 }
 
-.navbar__toggle {
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-button {
   display: grid;
   place-items: center;
   width: 2.75rem;
@@ -76,7 +82,16 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+  color: var(--text);
   cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.icon-button:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
 }
 
 /* Mobile menu panel (default) */
@@ -152,7 +167,7 @@
   object-fit: cover;
   object-position: top;
   /* Dimmed so the headline stays readable over bright screenshots. */
-  filter: brightness(0.62) saturate(1.05);
+  filter: var(--card-dim);
 }
 
 .hero__stage {
@@ -167,8 +182,8 @@
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, var(--bg) 0%, rgba(15, 16, 21, 0.78) 24%, rgba(15, 16, 21, 0) 44%),
-    linear-gradient(0deg, var(--bg) 0%, rgba(15, 16, 21, 0.85) 26%, rgba(15, 16, 21, 0) 52%);
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 24%, transparent 44%),
+    linear-gradient(0deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, transparent) 26%, transparent 52%);
 }
 
 .hero__content {
@@ -276,7 +291,7 @@
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
-  padding-block: 1.75rem;
+  padding-block: 1.5rem;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
@@ -289,12 +304,18 @@
   gap: 0.75rem 1.5rem;
 }
 
-.footer__links {
+.footer__end {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem 1.25rem;
 }
 
-.footer__links a:hover {
+.footer__social {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.footer__top:hover {
   color: var(--text);
 }

@@ -1,11 +1,5 @@
 /* Mobile-first: these rules widen the layout as space allows. */
 
-@media (min-width: 560px) {
-  .skills {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (min-width: 640px) {
   .hero__scroll {
     display: grid;
@@ -61,8 +55,12 @@
     justify-content: center;
   }
 
-  .skills {
-    grid-template-columns: repeat(3, 1fr);
+  .skill-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar__actions {
+    margin-left: 0.5rem;
   }
 
   .about {

@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Maximize2 } from "lucide-react";
 import Button from "./Button";
-import GitHubIcon from "./GitHubIcon";
 import GlassFolder from "./GlassFolder";
+import ProjectDetails from "./ProjectDetails";
+import SocialIcon from "./SocialIcon";
 
 const FOLDER_WIDTH = 340;
 const FOLDER_MIN_WIDTH = 220;
@@ -40,6 +41,7 @@ export default function ProjectCard({ project }) {
 
   const mediaRef = useRef(null);
   const folderWidth = useFolderWidth(mediaRef);
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   // Only real links become files inside the folder.
   const files = useMemo(() => {
@@ -104,16 +106,32 @@ export default function ProjectCard({ project }) {
               href={githubUrl}
               variant="secondary"
               external
-              icon={<GitHubIcon size={16} />}
+              icon={<SocialIcon name="github" size={16} />}
               aria-label={`Source code of ${title} on GitHub (opens in a new tab)`}
             >
               GitHub Source
             </Button>
-          ) : (
+          ) : null}
+          <button
+            type="button"
+            className="btn btn--ghost"
+            aria-haspopup="dialog"
+            onClick={() => setDetailsOpen(true)}
+          >
+            <Maximize2 size={16} aria-hidden="true" />
+            <span>
+              Details<span className="visually-hidden"> of {title}</span>
+            </span>
+          </button>
+          {!githubUrl ? (
             <span className="project__nosource">Source not public</span>
-          )}
+          ) : null}
         </div>
       </div>
+
+      {detailsOpen ? (
+        <ProjectDetails project={project} onClose={() => setDetailsOpen(false)} />
+      ) : null}
     </article>
   );
 }

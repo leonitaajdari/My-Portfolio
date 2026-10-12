@@ -1,11 +1,14 @@
-import { Mail } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 import Button from "../components/Button";
-import GitHubIcon from "../components/GitHubIcon";
 import SectionHeading from "../components/SectionHeading";
-import { email, socialLinks } from "../data/socialLinks";
+import SocialIcon from "../components/SocialIcon";
+import { cvUrl, email, socialLinks } from "../data/socialLinks";
+import { externalLinkProps } from "../utils/externalLinks";
 
 export default function Contact() {
-  const links = socialLinks.filter((link) => link.url);
+  const available = socialLinks.filter((link) => link.url);
+  const primary = available.filter((link) => link.priority === "primary");
+  const secondary = available.filter((link) => link.priority === "secondary");
 
   return (
     <section className="section" id="contact" aria-labelledby="contact-title">
@@ -27,20 +30,48 @@ export default function Contact() {
             >
               Send an email
             </Button>
-            {links
-              .filter((link) => link.id === "github")
-              .map((link) => (
-                <Button
-                  key={link.id}
-                  href={link.url}
-                  variant="secondary"
-                  external
-                  icon={<GitHubIcon size={18} />}
-                >
-                  {link.label}
-                </Button>
-              ))}
+
+            {primary.map((link) => (
+              <Button
+                key={link.id}
+                href={link.url}
+                variant="secondary"
+                external
+                icon={<SocialIcon name={link.id} size={18} />}
+                aria-label={`${link.label} (opens in a new tab)`}
+              >
+                {link.label}
+              </Button>
+            ))}
+
+            {cvUrl ? (
+              <Button
+                href={cvUrl}
+                variant="secondary"
+                download
+                icon={<Download size={18} aria-hidden="true" />}
+              >
+                Download CV
+              </Button>
+            ) : null}
           </div>
+
+          {secondary.length ? (
+            <ul className="contact__social" aria-label="More profiles">
+              {secondary.map((link) => (
+                <li key={link.id}>
+                  <a
+                    className="icon-link"
+                    href={link.url}
+                    aria-label={`${link.label} (opens in a new tab)`}
+                    {...externalLinkProps}
+                  >
+                    <SocialIcon name={link.id} size={20} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
     </section>

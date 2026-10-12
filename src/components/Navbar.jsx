@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "../data/socialLinks";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar({ activeSection }) {
   const [open, setOpen] = useState(false);
@@ -45,16 +46,19 @@ export default function Navbar({ activeSection }) {
           </ul>
         </nav>
 
-        <button
-          type="button"
-          className="navbar__toggle"
-          aria-expanded={open}
-          aria-controls="site-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="navbar__actions">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="icon-button navbar__toggle"
+            aria-expanded={open}
+            aria-controls="site-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
     </header>
   );

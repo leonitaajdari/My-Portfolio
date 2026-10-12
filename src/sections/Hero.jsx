@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowRight, Mail } from "lucide-react";
 import Button from "../components/Button";
-import GitHubIcon from "../components/GitHubIcon";
 import ImageStreamHero from "../components/ImageStreamHero";
+import SocialIcon from "../components/SocialIcon";
 import { heroImages } from "../data/heroImages";
 import { socialLinks } from "../data/socialLinks";
 
@@ -16,17 +16,17 @@ export default function Hero() {
         <div className="container hero__content">
           <div className="hero__top">
             <p className="eyebrow hero__enter" style={{ "--i": 0 }}>
-              Applied Programming student · Aspiring Front-End Developer
+              Applied Programming student · Mother Teresa University
             </p>
             <h1 id="hero-title" className="hero__title hero__enter" style={{ "--i": 1 }}>
-              Hi, I’m <span className="gradient-text">Leonita Ajdari</span>.
+              Hi, I’m <span className="gradient-text">Leonita</span>
             </h1>
           </div>
 
           <div className="hero__bottom">
             <p className="hero__lead hero__enter" style={{ "--i": 2 }}>
-              I build clean, responsive interfaces, solve problems one step at
-              a time, and get better by shipping real projects.
+              An aspiring frontend developer passionate about building modern,
+              intuitive web experiences.
             </p>
 
             <div className="hero__actions hero__enter" style={{ "--i": 3 }}>
@@ -34,21 +34,21 @@ export default function Hero() {
                 href="#projects"
                 icon={<ArrowRight size={18} aria-hidden="true" />}
               >
-                View my projects
+                View My Projects
               </Button>
               <Button
                 href="#contact"
                 variant="secondary"
                 icon={<Mail size={18} aria-hidden="true" />}
               >
-                Contact me
+                Contact Me
               </Button>
               {github ? (
                 <Button
                   href={github.url}
                   variant="secondary"
                   external
-                  icon={<GitHubIcon size={18} />}
+                  icon={<SocialIcon name="github" size={18} />}
                 >
                   GitHub
                 </Button>
@@ -58,7 +58,7 @@ export default function Hero() {
         </div>
       </ImageStreamHero>
 
-      <a className="hero__scroll" href="#about" aria-label="Scroll to About section">
+      <a className="hero__scroll" href="#projects" aria-label="Scroll to Projects">
         <ArrowDown size={20} aria-hidden="true" />
       </a>
     </section>

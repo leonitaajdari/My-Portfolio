@@ -1,16 +1,37 @@
-// Every project card on the site renders from this list.
-// To add a project: append an object here, put its screenshot in public/images/.
-// Use null for any URL that does not exist. Only add verified information.
+// Every project card (and its details dialog) renders from this list.
+//
+// To add a project: append an object, put its screenshot in public/images/.
+// Use null for any URL that does not exist. Only add information you can verify.
+//
+//   problem        one sentence: what it solves or why it exists
+//   features       short list of things the project really does
+//   contributions  what YOU built or decided (null until you write it)
+//   challenges     a technical challenge and how you solved it (null until written)
+//   learned        what you learned (null until written)
+//
+// Sections that are null are hidden on the live site. While running locally
+// (npm run dev) the dialog shows a dashed "to fill in" reminder instead, so you
+// can see exactly what is still missing.
 //
 // status: "completed" | "in-progress"
-// sourceNote: shown when no public repository exists
 
 export const projects = [
   {
     id: "fitplan",
     title: "FitPlan",
     description:
-      "A fitness platform where trainers build weekly workout and meal plans for their clients, and clients follow their plan and track progress. Includes role-based dashboards for trainers and clients and a recipe library.",
+      "A fitness platform where trainers build weekly workout and meal plans for their clients, and clients follow their plan and track progress.",
+    problem:
+      "Keeps workout plans, meal plans, recipes and weekly progress in one place for trainers and their clients.",
+    features: [
+      "Separate trainer and client accounts, each with its own dashboard",
+      "Weekly workout plans per client, built from an exercise library",
+      "Meal plans built from a meal library, with recipe pages",
+      "Clients complete workouts and meals to track weekly progress",
+    ],
+    contributions: null,
+    challenges: null,
+    learned: null,
     technologies: ["React", "React Router", "JavaScript", "Axios", "REST API"],
     liveUrl: "https://fitplan00.netlify.app/",
     githubUrl: "https://github.com/leonitaajdari/fitPlan0",
@@ -25,6 +46,18 @@ export const projects = [
     title: "Kindling Coffee",
     description:
       "A single-page website for a small-batch coffee roastery and café, with a drinks menu, a bean shop section, visitor information and a contact form.",
+    problem:
+      "Gives a café one clear page for its menu, its beans and everything a visitor needs to find it.",
+    features: [
+      "Drinks menu with prices, descriptions and category labels",
+      "A featured “on the slow bar today” coffee",
+      "Bean shop section with tasting notes, roast levels and prices",
+      "Visit section with opening hours, directions and contact details",
+      "Contact form with a topic selector",
+    ],
+    contributions: null,
+    challenges: null,
+    learned: null,
     technologies: ["React", "TanStack Router", "Tailwind CSS"],
     liveUrl: "https://kindilingcaffeee.netlify.app/",
     githubUrl: null,
@@ -39,7 +72,18 @@ export const projects = [
     title: "The Evolution of Cinematic Art",
     shortTitle: "Cinematic Art", // label on the folder, which has less room
     description:
-      "An interactive single-page website that walks through the history of cinema, from silent films to streaming and virtual reality, with a five-era timeline, background audio and an embedded video.",
+      "An interactive single-page website that walks through the history of cinema, from silent films to streaming and virtual reality.",
+    problem:
+      "Explains how cinema evolved through an interactive, easy-to-follow timeline.",
+    features: [
+      "Timeline of five eras of cinema, each with an image and a Learn More link",
+      "Introduction to what cinematic art is",
+      "Background audio with a sound toggle",
+      "Embedded video about the history of cinema",
+    ],
+    contributions: null,
+    challenges: null,
+    learned: null,
     technologies: ["HTML", "CSS", "Bootstrap"],
     liveUrl: "https://cinematicart.netlify.app/",
     githubUrl: null,
@@ -56,6 +100,11 @@ export const projects = [
     title: "ManiMagic",
     description:
       "A one-page website for a nail studio concept with services, a price list, a photo gallery and client reviews. Still being refined: the booking flow and some links are not finished yet.",
+    problem: null,
+    features: [],
+    contributions: null,
+    challenges: null,
+    learned: null,
     technologies: ["HTML", "CSS", "Bootstrap"],
     liveUrl: "https://manimagic.netlify.app/",
     githubUrl: null,

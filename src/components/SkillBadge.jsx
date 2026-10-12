@@ -1,13 +1,7 @@
-const LEVEL_LABEL = {
-  used: "Used in projects",
-  studied: "Studied",
-};
-
-export default function SkillBadge({ name, level, note }) {
+export default function SkillBadge({ name, note }) {
   return (
-    <li className={`skill reveal${level ? ` skill--${level}` : ""}`}>
+    <li className="skill">
       <span className="skill__name">{name}</span>
-      <span className="skill__level">{LEVEL_LABEL[level]}</span>
       {note ? <span className="skill__note">{note}</span> : null}
     </li>
   );

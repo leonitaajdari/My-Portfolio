@@ -1,12 +1,38 @@
-// level: "used"    = appears in one of the featured projects
-//        "studied" = learned through study, not shown in a featured project
-// Only add skills that can be backed up. No percentages or years.
+// A short note says where a skill really appears in your work.
+// Only add what you can back up. No percentages, no years of experience.
+//
+// Rapid AI is a course (see certifications.js), not a technology, so it is
+// not listed here. Say what it covers and it can be added by name.
 
-export const skills = [
-  { name: "HTML", level: "used", note: "All featured projects" },
-  { name: "CSS", level: "used", note: "All featured projects" },
-  { name: "JavaScript", level: "used", note: "FitPlan" },
-  { name: "React", level: "used", note: "FitPlan, Kindling Coffee" },
-  { name: "C++", level: "studied", note: null },
-  { name: "Web Design", level: "used", note: "Layout and interface design in every project" },
+export const skillGroups = [
+  {
+    id: "frontend",
+    title: "Frontend",
+    skills: [
+      { name: "HTML", note: "All featured projects" },
+      { name: "CSS", note: "All featured projects" },
+      { name: "JavaScript", note: "FitPlan" },
+      { name: "React", note: "FitPlan, Kindling Coffee" },
+      { name: "Web design", note: "Layout and interface design" },
+    ],
+  },
+  {
+    id: "programming",
+    title: "Programming",
+    skills: [{ name: "C++", note: "Studied" }],
+  },
+  {
+    id: "tools",
+    title: "Tools",
+    skills: [
+      { name: "Git", note: "Version control" },
+      { name: "GitHub", note: "Code hosting" },
+      { name: "VS Code", note: "Code editor" },
+    ],
+  },
+  {
+    id: "learning",
+    title: "Currently learning",
+    skills: [{ name: "AI-assisted development tools", note: "In progress" }],
+  },
 ];

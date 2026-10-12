@@ -1,3 +1,4 @@
+import GitHubActivity from "../components/GitHubActivity";
 import SectionHeading from "../components/SectionHeading";
 import { currentStudies, languages } from "../data/education";
 
@@ -9,36 +10,39 @@ export default function About() {
           <SectionHeading id="about-title" eyebrow="03 / About" title="A bit about me" />
           <div className="about__text reveal">
             <p>
-              I’m an Applied Programming student in Skopje, working toward a
-              career in front-end development. I like the moment a design turns
-              into a working interface, and the problem solving it takes to get
-              there.
+              I’m studying Applied Programming at Mother Teresa University in
+              Skopje, and I’m building toward a career in front-end development.
+              I’m most interested in React, JavaScript and AI tools, and in
+              making web interfaces that are clear and easy to use.
             </p>
             <p>
-              I’ve completed courses in HTML, CSS, JavaScript and React, and I’m
-              currently attending a Rapid AI course. I put what I learn into
-              real projects, and each one teaches me what to do better in the
-              next.
+              I learn by making things. I’ve completed courses in HTML, CSS,
+              JavaScript and React, I’m attending a Rapid AI course, and I turn
+              what I learn into real projects.
             </p>
           </div>
         </div>
 
-        <dl className="facts reveal">
-          <div>
-            <dt>Studying</dt>
-            <dd>
-              {currentStudies.degree}, {currentStudies.institution}
-            </dd>
-          </div>
-          <div>
-            <dt>Focus</dt>
-            <dd>Front-end development, responsive interfaces</dd>
-          </div>
-          <div>
-            <dt>Languages</dt>
-            <dd>{languages.join(" · ")}</dd>
-          </div>
-        </dl>
+        <div className="about__aside">
+          <dl className="facts reveal">
+            <div>
+              <dt>Studying</dt>
+              <dd>
+                {currentStudies.degree}, {currentStudies.institution}
+              </dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Front-end development with React and JavaScript</dd>
+            </div>
+            <div>
+              <dt>Languages</dt>
+              <dd>{languages.join(" · ")}</dd>
+            </div>
+          </dl>
+
+          <GitHubActivity />
+        </div>
       </div>
     </section>
   );

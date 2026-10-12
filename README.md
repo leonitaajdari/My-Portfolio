@@ -49,6 +49,11 @@ All content lives in `src/data/`, so components never need editing for routine u
   id: "my-project",
   title: "My Project",
   description: "One or two honest sentences about what it does.",
+  problem: "One sentence: what it solves.",
+  features: ["Something it really does", "Another real feature"],
+  contributions: null, // what YOU built; null hides the section
+  challenges: null,    // a real technical challenge and its solution
+  learned: null,       // what you learned
   technologies: ["React", "CSS"],
   liveUrl: "https://my-project.netlify.app/", // or null
   githubUrl: "https://github.com/leonitaajdari/my-project", // or null
@@ -62,6 +67,10 @@ All content lives in `src/data/`, so components never need editing for routine u
 
 Use `null` for any URL that does not exist. A project with no `githubUrl` shows "Source not public".
 
+The **Details** button opens an accessible dialog built from the same data. Sections whose value is `null`
+are hidden on the live site. While running `npm run dev`, each missing section shows a dashed
+"Development placeholder" box so you can see what is still left to write.
+
 ### Hero images
 The hero corridor uses real captures of the featured sites in `public/images/stream/` (`stream-01.webp` to `stream-09.webp`).
 To change them, replace those files (portrait, about 480×667) or edit `src/data/heroImages.js`.
@@ -69,12 +78,29 @@ To change them, replace those files (portrait, about 480×667) or edit `src/data
 ### Other content
 | What | File |
 |---|---|
-| Skills and whether they were used in a project or studied | `src/data/skills.js` |
+| Skill categories and the note under each skill | `src/data/skills.js` |
 | Education and languages | `src/data/education.js` |
 | Courses and certificates | `src/data/certifications.js` |
 | Email, social links, navigation | `src/data/socialLinks.js` |
 
-To show a LinkedIn link, set its `url` in `socialLinks.js`. Links with `url: null` are hidden.
+### Social links and CV
+In `src/data/socialLinks.js`, paste the exact profile URL for LinkedIn, Facebook and Instagram.
+Links with `url: null` are hidden everywhere (contact section and footer), so nothing fake is ever shown.
+To enable **Download CV**, put a PDF in `public/resume/` and set `cvUrl` to its path. Use a version
+without your date of birth, home address or phone number, because everything in `public/` is public.
+
+### Theme
+The site follows the visitor's system light/dark preference on the first visit and remembers their
+choice in `localStorage`. Colors are CSS variables in `src/styles/variables.css`.
+
+### GitHub activity
+The About section lists your most recently pushed public repositories from the public GitHub API
+(no key needed, cached for 10 minutes). It shows loading, empty and error states. Change the account
+in `githubUsername` in `socialLinks.js`.
+
+### Contact form
+There is no form on purpose: a form needs a service to receive messages. The email button works
+everywhere. To add one later, Netlify Forms is the simplest option once the site is deployed.
 
 ## Deploy on Netlify
 
