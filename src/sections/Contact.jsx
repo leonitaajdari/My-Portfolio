@@ -11,9 +11,9 @@ export default function Contact() {
     <section className="section" id="contact" aria-labelledby="contact-title">
       <div className="container">
         <div className="contact reveal">
-          <SectionHeading id="contact-title" eyebrow="Contact" title="Let’s talk">
-            I’m open to internships, junior opportunities and collaboration.
-            The best way to reach me is by email.
+          <SectionHeading id="contact-title" eyebrow="05 / Contact" title="Let’s talk">
+            If you’d like to discuss a project, an opportunity or my work, email
+            is the best way to reach me.
           </SectionHeading>
 
           <p className="contact__email">

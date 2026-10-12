@@ -6,11 +6,9 @@ import { navLinks } from "./data/socialLinks";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useReveal } from "./hooks/useReveal";
 import About from "./sections/About";
-import Certifications from "./sections/Certifications";
 import Contact from "./sections/Contact";
 import Education from "./sections/Education";
 import Hero from "./sections/Hero";
-import Languages from "./sections/Languages";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 
@@ -36,12 +34,10 @@ export default function App() {
       <Navbar activeSection={activeSection} />
       <main id="main">
         <Hero />
-        <About />
-        <Skills />
         <Projects />
+        <Skills />
+        <About />
         <Education />
-        <Certifications />
-        <Languages />
         <Contact />
       </main>
       <Footer />

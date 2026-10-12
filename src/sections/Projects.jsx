@@ -8,9 +8,8 @@ export default function Projects() {
   return (
     <section className="section" id="projects" aria-labelledby="projects-title">
       <div className="container">
-        <SectionHeading id="projects-title" eyebrow="Projects" title="Featured projects">
-          Real projects I’ve built and deployed. Each one links to the live
-          site, and to the source where it’s public.
+        <SectionHeading id="projects-title" eyebrow="01 / Projects" title="Selected projects">
+          Websites I’ve built and deployed. Open a folder to see its links.
         </SectionHeading>
 
         <div className="projects">

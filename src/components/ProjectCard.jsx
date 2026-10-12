@@ -28,6 +28,7 @@ function useFolderWidth(ref) {
 export default function ProjectCard({ project }) {
   const {
     title,
+    shortTitle,
     description,
     technologies,
     liveUrl,
@@ -62,7 +63,7 @@ export default function ProjectCard({ project }) {
     <article className="project reveal">
       <div className="project__media" ref={mediaRef}>
         <GlassFolder
-          label={title}
+          label={shortTitle ?? title}
           meta={status === "in-progress" ? "In progress" : "Completed"}
           tone="dark"
           image={image}

@@ -41,87 +41,6 @@
   background: var(--surface-hover);
 }
 
-.btn--ghost {
-  color: var(--text-muted);
-}
-
-.btn--ghost:hover {
-  color: var(--text);
-}
-
-/* About */
-.about {
-  display: grid;
-  gap: 1rem;
-}
-
-.about__text {
-  display: grid;
-  gap: 1.1rem;
-  max-width: 42rem;
-  font-size: var(--step-1);
-  color: var(--text-muted);
-}
-
-/* Skills */
-.skills {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.skills__group {
-  padding: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.skills__group h3 {
-  margin-bottom: 1.1rem;
-  font-size: var(--step-1);
-}
-
-.skills__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.skill {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.6rem 0.9rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.skill__name {
-  font-weight: 600;
-}
-
-.skill__level {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.skill--used {
-  border-color: rgba(155, 140, 255, 0.45);
-}
-
-.skill--used .skill__level {
-  color: var(--accent);
-}
-
-.skill__note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
 /* Projects */
 .projects {
   display: grid;
@@ -223,50 +142,158 @@
   color: var(--text-muted);
 }
 
-/* Education timeline */
-.timeline {
+/* Skills: a single grid of tiles */
+.skills {
   display: grid;
-  gap: 1.25rem;
-  max-width: 44rem;
+  gap: 0.9rem;
 }
 
-.timeline__item {
-  display: flex;
-  gap: 1rem;
-  padding: 1.35rem;
+.skill {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  padding: 1.25rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition:
+    border-color 0.25s,
+    opacity 0.6s var(--ease),
+    transform 0.6s var(--ease);
+}
+
+.skill:hover {
+  border-color: var(--border-strong);
+}
+
+.skill__name {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.skill__level {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.skill--used .skill__level {
+  color: var(--accent);
+}
+
+.skill__note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* About */
+.about {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.about .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.about__text {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 38rem;
+  font-size: var(--step-1);
+  color: var(--text-muted);
+}
+
+.facts {
+  display: grid;
+  align-content: start;
+  margin: 0;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
-.timeline__icon,
-.cert__icon {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  background: rgba(155, 140, 255, 0.12);
-  color: var(--accent);
-  border-radius: 12px;
+.facts > div {
+  padding: 1.1rem 1.35rem;
 }
 
-.timeline__period {
+.facts > div + div {
+  border-top: 1px solid var(--border);
+}
+
+.facts dt {
+  margin-bottom: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--text);
+}
+
+/* Education and learning */
+.learn {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.learn__study,
+.learn__courses {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.learn h3 {
+  margin-bottom: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.learn__degree {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.learn__place {
+  margin-top: 0.6rem;
+  color: var(--text-muted);
+}
+
+.learn__period {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
+  margin-top: 1rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-.timeline__item h3 {
-  margin-block: 0.35rem;
-  font-size: var(--step-1);
-}
-
-.timeline__place {
+.learn__previous,
+.learn__also {
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
@@ -280,45 +307,36 @@
   letter-spacing: 0.05em;
 }
 
-/* Certificates */
-.certs {
+.courses {
   display: grid;
-  gap: 1rem;
 }
 
-.cert {
+.course {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  padding: 0.85rem 0;
 }
 
-.cert--progress {
-  border-style: dashed;
-  border-color: var(--warning);
+.course + .course {
+  border-top: 1px solid var(--border);
 }
 
-.cert--progress .cert__icon {
-  background: rgba(255, 200, 97, 0.12);
-  color: var(--warning);
+.course__title {
+  font-weight: 600;
 }
 
-.cert h3 {
-  font-size: 1.05rem;
-}
-
-.cert__provider,
-.cert__detail {
-  margin-top: 0.25rem;
-  font-size: 0.92rem;
+.course__provider {
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
-.cert__status {
-  display: inline-block;
-  margin-top: 0.65rem;
+.course__status {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
@@ -326,59 +344,17 @@
   color: var(--success);
 }
 
-.cert--progress .cert__status {
+.course--progress .course__status {
   color: var(--warning);
 }
 
-/* Languages */
-.languages {
-  display: grid;
-  gap: 1rem;
-  max-width: 44rem;
-}
-
-.language {
-  padding: 1.1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.language__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.25rem 1rem;
-}
-
-.language__head h3 {
-  font-size: 1.1rem;
-}
-
-.language__head p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.language__bar {
-  margin-top: 0.8rem;
-  height: 6px;
-  background: var(--bg);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.language__bar span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius: 999px;
+.learn__also {
+  margin-top: 0.6rem;
 }
 
 /* Contact */
 .contact {
-  padding: clamp(1.75rem, 5vw, 4rem);
+  padding: clamp(1.75rem, 5vw, 3.5rem);
   background:
     radial-gradient(circle at 100% 0%, rgba(124, 107, 255, 0.2), transparent 55%),
     var(--surface);

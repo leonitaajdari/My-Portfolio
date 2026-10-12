@@ -29,7 +29,7 @@
   /* Layout */
   --container: 72rem;
   --gutter: clamp(1.25rem, 5vw, 2rem);
-  --section-space: clamp(4.5rem, 9vw, 8rem);
+  --section-space: clamp(3.75rem, 7vw, 6.5rem);
   --radius: 16px;
   --radius-sm: 10px;
   --header-h: 4.25rem;

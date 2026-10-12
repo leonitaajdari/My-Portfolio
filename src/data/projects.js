@@ -37,6 +37,7 @@ export const projects = [
   {
     id: "cinematic-art",
     title: "The Evolution of Cinematic Art",
+    shortTitle: "Cinematic Art", // label on the folder, which has less room
     description:
       "An interactive single-page website that walks through the history of cinema, from silent films to streaming and virtual reality, with a five-era timeline, background audio and an embedded video.",
     technologies: ["HTML", "CSS", "Bootstrap"],
@@ -49,6 +50,8 @@ export const projects = [
     note: null,
   },
   {
+    // Not featured: the booking flow and several links are still placeholders.
+    // Set featured: true again once the site is finished.
     id: "manimagic",
     title: "ManiMagic",
     description:
@@ -58,7 +61,7 @@ export const projects = [
     githubUrl: null,
     image: "/images/manimagic.webp",
     imageAlt: "Screenshot of the ManiMagic website hero with a purple Book Now button on a dark background.",
-    featured: true,
+    featured: false,
     status: "in-progress",
     note: null,
   },

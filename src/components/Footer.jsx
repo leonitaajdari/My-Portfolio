@@ -1,4 +1,4 @@
-import { navLinks, socialLinks } from "../data/socialLinks";
+import { socialLinks } from "../data/socialLinks";
 import { externalLinkProps } from "../utils/externalLinks";
 
 export default function Footer() {
@@ -8,22 +8,13 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <div>
-          <p className="footer__name">Leonita Ajdari</p>
-          <p className="footer__role">Front-End Developer in training</p>
-        </div>
-
-        <nav aria-label="Footer navigation">
-          <ul className="footer__links">
-            {navLinks.map((link) => (
-              <li key={link.id}>
-                <a href={`#${link.id}`}>{link.label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
+        <p>
+          © {year} Leonita Ajdari
+        </p>
         <ul className="footer__links" aria-label="Social profiles">
+          <li>
+            <a href="#top">Back to top</a>
+          </li>
           {links.map((link) => (
             <li key={link.id}>
               <a href={link.url} {...externalLinkProps}>
@@ -33,9 +24,6 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-      <p className="container footer__copy">
-        © {year} Leonita Ajdari. All rights reserved.
-      </p>
     </footer>
   );
 }

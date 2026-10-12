@@ -17,10 +17,9 @@ export const socialLinks = [
 ];
 
 export const navLinks = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "about", label: "About" },
   { id: "education", label: "Education" },
-  { id: "certifications", label: "Courses" },
   { id: "contact", label: "Contact" },
 ];

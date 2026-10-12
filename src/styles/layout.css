@@ -15,7 +15,7 @@
 
 .section-heading {
   max-width: 40rem;
-  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
 }
 
 .section-heading h2 {
@@ -276,40 +276,25 @@
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
-  padding-block: 3rem 2rem;
-  background: var(--bg-raised);
+  padding-block: 1.75rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .footer__inner {
-  display: grid;
-  gap: 2rem;
-}
-
-.footer__name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--step-1);
-}
-
-.footer__role {
-  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
 }
 
 .footer__links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
-  color: var(--text-muted);
 }
 
 .footer__links a:hover {
   color: var(--text);
-}
-
-.footer__copy {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.9rem;
-  color: var(--text-muted);
 }

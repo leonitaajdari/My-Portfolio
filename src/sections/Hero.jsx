@@ -25,8 +25,8 @@ export default function Hero() {
 
           <div className="hero__bottom">
             <p className="hero__lead hero__enter" style={{ "--i": 2 }}>
-              I’m learning to build modern, clear and responsive websites, and
-              I grow by turning what I study into real projects.
+              I build clean, responsive interfaces, solve problems one step at
+              a time, and get better by shipping real projects.
             </p>
 
             <div className="hero__actions hero__enter" style={{ "--i": 3 }}>
