@@ -91,6 +91,19 @@ Links with `url: null` are hidden everywhere (contact section and footer), so no
 To enable **Download CV**, put a PDF in `public/resume/` and set `cvUrl` to its path. Use a version
 without your date of birth, home address or phone number, because everything in `public/` is public.
 
+### Opening animation
+A handwritten "hello" is drawn when someone first opens the site, then fades away (about 3 seconds).
+It plays once per browser tab, is skipped for visitors who prefer reduced motion, and has a
+"Skip intro" button (Escape also skips). Edit `src/data/intro.js` to change:
+
+- `word`: "hello" uses the hand-drawn path. Any other word is written in a script font.
+- `caption`: the small line under it ("" hides it).
+- `duration` and `fade`: timing in milliseconds.
+- `storageKey`: change it to replay the intro in a tab that already saw it.
+
+Colors follow the site theme (`--accent`, `--accent-2`, `--bg`). The component is
+`src/components/IntroOverlay.jsx`.
+
 ### Theme
 The site follows the visitor's system light/dark preference on the first visit and remembers their
 choice in `localStorage`. Colors are CSS variables in `src/styles/variables.css`.

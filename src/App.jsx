@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import Footer from "./components/Footer";
+import IntroOverlay from "./components/IntroOverlay";
 import Navbar from "./components/Navbar";
+import { intro } from "./data/intro";
 import { navLinks } from "./data/socialLinks";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useReveal } from "./hooks/useReveal";
@@ -28,6 +30,7 @@ export default function App() {
 
   return (
     <>
+      <IntroOverlay {...intro} />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

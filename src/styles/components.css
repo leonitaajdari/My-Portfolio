@@ -653,3 +653,118 @@ html.has-dialog {
   gap: 0.75rem;
   padding-top: 0.5rem;
 }
+
+/* Opening animation (IntroOverlay) */
+html.intro-active,
+html.intro-active body {
+  overflow: hidden;
+}
+
+/* The hero text waits, then rises in as the overlay fades away. */
+html.intro-active .hero__enter {
+  animation-play-state: paused;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text);
+  opacity: 1;
+  transition:
+    opacity var(--intro-fade, 500ms) var(--ease),
+    visibility 0s linear var(--intro-fade, 500ms);
+}
+
+.intro.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro__inner {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.intro__svg {
+  width: min(86vw, 34rem);
+  height: auto;
+  overflow: visible;
+}
+
+.intro__stroke {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: intro-draw var(--intro-draw, 1800ms) cubic-bezier(0.6, 0.05, 0.3, 1) 0.2s both;
+}
+
+@keyframes intro-draw {
+  from {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* A custom word is written in a script font and revealed left to right. */
+.intro__word {
+  font-family: "Segoe Script", "Snell Roundhand", "Brush Script MT", "Lucida Handwriting", cursive;
+  font-size: 110px;
+  clip-path: inset(0 100% 0 0);
+  animation: intro-wipe var(--intro-draw, 1800ms) cubic-bezier(0.6, 0.05, 0.3, 1) 0.2s both;
+}
+
+@keyframes intro-wipe {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.intro__caption {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  animation: rise 0.7s var(--ease) calc(var(--intro-draw, 1800ms) * 0.75) both;
+}
+
+.intro__skip {
+  position: absolute;
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  left: 50%;
+  translate: -50% 0;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  animation: rise 0.6s var(--ease) 0.5s both;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.intro__skip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
