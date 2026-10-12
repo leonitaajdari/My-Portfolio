@@ -15,14 +15,13 @@ export const portrait = {
 };
 
 // The name card in the About section.
-// age is shown in the card; set it to null to hide it.
-// Update it each year on your birthday. Do not store your date of birth here:
-// everything in this file is sent to every visitor.
+// age is hidden while it is null. Set a number (e.g. 21) to show it in the card.
+// Never store a date of birth here: everything in this file is sent to every visitor.
 export const identity = {
   fullName: "Leonita Ajdari",
   role: "Applied Programming student",
   studyingIn: "Skopje, North Macedonia",
-  age: 20,
+  age: null,
   // Shown as "Favorite tool" in the card, e.g. "VS Code" or "React". null hides it.
   favoriteTool: "VS Code",
 };
