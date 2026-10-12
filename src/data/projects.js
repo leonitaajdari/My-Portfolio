@@ -94,8 +94,8 @@ export const projects = [
     note: null,
   },
   {
-    // Not featured: the booking flow and several links are still placeholders.
-    // Set featured: true again once the site is finished.
+    // Shown with an "In progress" label: the booking flow and some links are
+    // still placeholders on the live site.
     id: "manimagic",
     title: "ManiMagic",
     description:
@@ -110,8 +110,32 @@ export const projects = [
     githubUrl: null,
     image: "/images/manimagic.webp",
     imageAlt: "Screenshot of the ManiMagic website hero with a purple Book Now button on a dark background.",
-    featured: false,
+    featured: true,
     status: "in-progress",
+    note: null,
+  },
+  {
+    id: "manimagic-artist-page",
+    title: "ManiMagic Nail Artist Page",
+    shortTitle: "Nail Artist Page",
+    description:
+      "A one-page personal website for a nail artist, with an introduction, an about section, the services offered and a price list.",
+    problem: null,
+    features: [
+      "Introduction and about sections for a nail artist",
+      "Services overview",
+      "Price list",
+    ],
+    contributions: null,
+    challenges: null,
+    learned: null,
+    technologies: ["HTML", "CSS", "Bootstrap", "jQuery"],
+    liveUrl: "https://leonitaajdari.netlify.app/",
+    githubUrl: null,
+    image: "/images/manimagic-personal.webp",
+    imageAlt: "Screenshot of the ManiMagic nail artist page with an illustrated portrait and the greeting 'Hi, I'm Leonita Ajdari' on a lilac card.",
+    featured: true,
+    status: "completed",
     note: null,
   },
 ];
