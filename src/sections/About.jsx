@@ -1,6 +1,7 @@
 import GitHubActivity from "../components/GitHubActivity";
 import SectionHeading from "../components/SectionHeading";
 import { currentStudies, languages } from "../data/education";
+import { portrait } from "../data/profile";
 
 export default function About() {
   return (
@@ -24,6 +25,20 @@ export default function About() {
         </div>
 
         <div className="about__aside">
+          {portrait.src ? (
+            <figure className="portrait reveal">
+              <img
+                src={portrait.src}
+                alt={portrait.alt}
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                style={{ objectPosition: portrait.position }}
+              />
+            </figure>
+          ) : null}
+
           <dl className="facts reveal">
             <div>
               <dt>Studying</dt>
